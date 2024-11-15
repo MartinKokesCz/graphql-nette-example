@@ -6,22 +6,21 @@ use App\GraphQL\Resolvers\BookResolver;
 use App\GraphQL\Schema\BookType;
 use App\GraphQL\Schema\MutationType;
 use App\GraphQL\Schema\QueryType;
-use App\Model\Database\Entity\Book;
-use Doctrine\ORM\EntityManagerInterface;
+use App\Model\Database\EntityManager;
 use GraphQL\GraphQL;
 use GraphQL\Type\Schema;
 use Nette\Application\UI\Presenter;
 
 class ApiPresenter extends Presenter
 {
-	private EntityManagerInterface $entityManager;
+	private EntityManager $entityManager;
 
 	/**
 	 * GraphQLPresenter constructor.
 	 *
-	 * @param EntityManagerInterface $entityManager The Doctrine entity manager
+	 * @param EntityManager $entityManager The Doctrine entity manager
 	 */
-	public function __construct(EntityManagerInterface $entityManager)
+	public function __construct(EntityManager $entityManager)
 	{
 		parent::__construct();
 		$this->entityManager = $entityManager;
@@ -34,7 +33,7 @@ class ApiPresenter extends Presenter
 	{
 		// Set up resolvers and types
 		$bookResolver = new BookResolver(
-			$this->entityManager->getRepository(Book::class),
+			$this->entityManager->getBookRepository(),
 			$this->entityManager
 		);
 
