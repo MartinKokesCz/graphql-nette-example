@@ -63,7 +63,7 @@ docker-compose up --build
 ---
 
 ## Database Setup
-- Run migrations to set up the database schema:
+- The migrations are started together with docker compose command, but if it is not working you can manually run migrations to set up the database schema:
 ```bash
 docker exec -it graphql-nette-example-php-1 php bin/console migrations:migrate
 ```
@@ -146,3 +146,9 @@ mutation {
   deleteBook(id: 1)
 }
 ```
+---
+
+## Tools for development
+- **`make cs`**: Runs code style checks using CodeSniffer to ensure the code adheres to defined coding standards.
+- **`make cbf`**: Executes the code style fixer to automatically format and fix code style issues based on the defined coding standards.
+- **`make stan`**: Runs static analysis using a tool like PHPStan to identify potential bugs, type mismatches, and other issues in the codebase.
