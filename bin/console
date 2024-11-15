@@ -1,0 +1,12 @@
+#!/usr/bin/env php
+<?php
+
+use App\Bootstrap;
+
+require __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../app/Bootstrap.php';
+
+$container = (new Bootstrap())->bootWebApplication();
+
+// Run application.
+$container->getByType(Symfony\Component\Console\Application::class)->run();

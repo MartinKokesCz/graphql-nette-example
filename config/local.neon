@@ -1,0 +1,8 @@
+parameters:
+	database:
+		driver: mysqli
+		host: database
+		port: 3306
+		dbname: graphql
+		user: root
+		password: root

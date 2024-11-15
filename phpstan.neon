@@ -1,0 +1,13 @@
+parameters:
+	level: 8
+
+	fileExtensions:
+		- php
+	doctrine:
+		ormRepositoryClass: App\Model\Database\EntityManager
+
+includes:
+	- vendor/phpstan/phpstan-nette/extension.neon
+	- vendor/phpstan/phpstan-nette/rules.neon
+	- vendor/phpstan/phpstan-doctrine/extension.neon
+	- vendor/phpstan/phpstan-doctrine/rules.neon
