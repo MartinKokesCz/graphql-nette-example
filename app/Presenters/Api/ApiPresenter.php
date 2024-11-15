@@ -8,7 +8,6 @@ use App\GraphQL\Schema\MutationType;
 use App\GraphQL\Schema\QueryType;
 use App\Model\Database\Entity\Book;
 use Doctrine\ORM\EntityManagerInterface;
-use GraphQL\Error\DebugFlag;
 use GraphQL\GraphQL;
 use GraphQL\Type\Schema;
 use Nette\Application\UI\Presenter;
